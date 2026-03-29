@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #111;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px;
+            background: black;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .row input,
+        select {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .full {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .summary {
+            margin-top: 20px;
+            padding: 15px;
+            background: #000;
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 22px;
+            color: #00aaff;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #00aaff, #0077cc);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: gray
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: #e74c3c;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        #profile-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e74c3c;
+            transition: transform 0.3s;
+            display: block;
+        }
+
+        #profile-img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Hyper<span>Drive</span></div>
+        <ul class="nav-links">
+            <li><a href="main page.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="basit2.html">Our cars</a></li>
+            <li><a href="contact page.html">Contact</a></li>
+            <li class="profile-li">
+                <a href="profile.html">
+                    <img id="profile-img"
+                        src="https://static.vecteezy.com/system/resources/thumbnails/036/280/650/small/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg"
+                        alt="profile">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Complete Your Booking</h1>
+    </header>
+
+    <div class="container">
+
+
+        <h2>Personal Information</h2>
+
+        <div class="row">
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+        </div>
+
+        <div class="row">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="phone" placeholder="Phone">
+        </div>
+
+
+        <h2>Booking Details</h2>
+
+        <div class="row">
+            <input type="date" id="startDate">
+            <input type="date" id="endDate">
+        </div>
+
+        <div class="full">
+            <select id="car">
+                <option value="BMW 3 Series">BMW 3 Series</option>
+                <option value="Mercedes AMG GT">Mercedes AMG gt</option>
+                <option value="Porsche 911">Porsche 911</option>
+                <option value="Lamborghini Aventador">Lamborghini Aventador</option>
+                <option value="Ferrari F40">Ferrari F40</option>
+                <option value="Toyota Supra">Toyota Supra</option>
+                <option value="Nissan GT-R">Nissan GT-R</option>
+            </select>
+        </div>
+
+        <textarea id="message" placeholder="Extra requests..."></textarea>
+
+
+        <div class="summary">
+            <p>Car: <span id="carName">BMW 3 Series</span></p>
+            <p>Days: <span id="days">0</span></p>
+            <p class="price" id="total">Total: $0</p>
+        </div>
+
+        <button onclick="confirmBooking()">Confirm Booking</button>
+
+    </div>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+
+        let car = params.get("car");
+        let start = params.get("start");
+        let end = params.get("end");
+        let price = params.get("price");
+
+
+        const pricePerDay = Number(price);
+
+
+        window.onload = function () {
+
+            if (car) {
+                document.getElementById("car").value = car;
+                document.getElementById("carName").innerText = car;
+            }
+
+            if (start) document.getElementById("startDate").value = start;
+            if (end) document.getElementById("endDate").value = end;
+
+            calculate();
+        };
+
+
+        document.getElementById("startDate").onchange = calculate;
+        document.getElementById("endDate").onchange = calculate;
+
+
+        function calculate() {
+
+            let startDate = new Date(document.getElementById("startDate").value);
+            let endDate = new Date(document.getElementById("endDate").value);
+
+            if (startDate && endDate && endDate > startDate) {
+
+                let days = (endDate - startDate) / (1000 * 60 * 60 * 24);
+                let total = days * pricePerDay;
+
+                document.getElementById("days").innerText = days;
+                document.getElementById("total").innerText =
+                    "Total: $" + total + " (" + days + " days)";
+            }
+        }
+
+
+        function confirmBooking() {
+
+            let name = document.getElementById("firstName").value + " " +
+                document.getElementById("lastName").value;
+
+            let message = "Booking Request:\n"
+                + "Name: " + name + "\n"
+                + "Car: " + car + "\n"
+                + "From: " + start + "\n"
+                + "To: " + end + "\n"
+                + "Price/day: $" + pricePerDay;
+
+            alert(message);
+
+        }
+    </script>
+
+</body>
+
+</html>

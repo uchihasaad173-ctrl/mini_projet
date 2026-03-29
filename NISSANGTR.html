@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            background-color: black;
+        }
+        header {
+            background-image: url(Nissantop.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            position: relative;
+           
+        }
+        #toptxt {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            width: 400px;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+        #carte {
+            display: flex;
+            justify-content: space-around;
+        }
+        fieldset {
+            width: 400px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            border: none;
+            color: white;
+            
+        }
+        fieldset img {
+            width: 100%; 
+        }
+        #supercar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            gap: 50px;
+        }
+        #sous_supercar img {
+            width: 20px;
+        }
+        #supercar img {
+            width: 700px;
+            border-radius: 10px;
+            
+        }
+           video {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+        
+.bottom-bar {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 95%;
+    max-width: 900px;
+
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.85);
+
+    border-radius: 20px;
+    padding: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+
+.bar-info .price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00aaff;
+}
+
+.bar-info .total {
+    font-size: 13px;
+    color: #ccc;
+}
+
+
+.dates {
+    display: flex;
+    gap: 5px;
+}
+
+.dates input {
+    padding: 6px;
+    border-radius: 8px;
+    border: none;
+    font-size: 12px;
+}
+
+
+.actions {
+    display: flex;
+    gap: 6px;
+}
+
+.book-btn {
+    background: linear-gradient(135deg, #00aaff, #0077cc);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.wa-btn {
+    background: #25D366;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+</style>
+</head>
+
+<body>
+    <header>
+        <div id="toptxt">
+            <p>NISSAN GT-R (R35)</p>
+            <h3>UN MODÈLE ICONIQUE</h3>
+            <p>LA GT-R A BRISÉ LES CONVENTIONS PENDANT DES DÉCENNIES, DE GÉNÉRATION EN GÉNÉRATION. LE RÉSULTAT D’un
+                HÉRITAGE LÉGENDAIRE.</p>
+        </div>
+    </header>
+
+
+    <main>
+        <h1 style="color: white; text-align: center; margin-top: 100px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">C’EST L’HISTOIRE D’UNE LÉGENDE</h1>
+        <p style="color: white; text-align: center;">Quand certains voient la ligne d’arrivée, elle ne voit que le début d’un autre tour. La Nissan GT-R restera
+            un modèle iconique, et une supercar de référence.</p><br><br><br>
+        <div id="carte">
+            <fieldset>
+                <img src="carten1.png" alt="">
+                <h2>UN PLAISIR INÉGALABLE</h2>
+                <p>Calibré pour fendre l’air, le design emblématique de la GT-R a été imaginé avec un seul objectif en
+                    ligne de mire : la performance ultime. 570 chevaux à l’unisson pour une expérience qui se résume en
+                    un seul mot : sensation.</p>
+            </fieldset>
+            <fieldset>
+                <img src="carten2.png" alt="">
+                <h2>UNE PRÉCISION MILLIMÉTRÉE</h2>
+                <p>La légende ne s’est pas créée qu’avec des chronos ou des 0 à 100 km/h. Elle réside dans le souci du
+                    détail. Le chemin vers la perfection se parcourt millimètre par millimètre. Soulever le capot de la
+                    GT-R, c’est saisir l’ampleur de l’expertise des ingénieurs Nissan.</p>
+            </fieldset>
+            <fieldset>
+                <img src="carten3.png" alt="">
+                <h2>UN RAFFINEMENT DE HAUT NIVEAU</h2>
+                <p>Chaque détail de l’habitacle fut l’aboutissement d’années de développement, pour combiner luxe, sport
+                    et volupté. S’installer à bord, c’est ouvrir la porte d’un univers de performance et d’élégance.
+                    Tout a été pensé pour que le conducteur ne fasse qu’un avec sa GT-R.</p>
+            </fieldset>
+        </div>
+        <p style="color: white; text-align: center;">NISSAN GT-R (R35)</p>
+        <h1 style="color: white; text-align: center;">LA SUPERCAR DE TOUS LES SUPERLATIFS</h1>
+        <div id="supercar">
+            <img src="nishub.png" alt="">
+            <div id="sous_supercar">
+                 <img src="engine.png" alt="" style="width: 100%; height: auto; margin-bottom: 0px;">
+                <h3 style="color: white; margin-top: 0px; padding-top: 0px;">GT-R NISMO</h3>
+                <p style="color: white; margin-top: 0px; padding-top: 0px;">Repousser encore davantage les limites de la performance? Le département Nissan Motorsport l’a fait. La version la plus ultime de la GT-R s’habille du patronyme NISMO. Avec 600ch et un couple maximal de 652 Nm, cette version exclusive s’est aventurée au plus près des frontières de la compétition.</p>
+            </div>
+        </div>
+        <p style="color: white; text-align: center;">L’ÉVOLUTION D’UNE LÉGENDE</p>
+        <h1 style="color: white; text-align: center;">HÉRITAGE NISSAN GT-R</h1>
+        <video  src="nissanvideo.mp4" controls ></video>
+        <br><br><br><br><br>
+        <img src="nissanend.png" alt="" style="background-size: cover; width: 100%; height: auto;">
+    </main>
+    <div class="bottom-bar">
+
+    <div class="bar-info">
+        <div class="price">$130/day</div>
+        <div class="total" id="total">Total: $130</div>
+        <div style="font-size:12px;color:#00aaff;">
+            ⚡ Only 2 BMW Series 3 left today
+        </div>
+    </div>
+
+    <div class="dates">
+        <input type="date" id="startDate">
+        <input type="date" id="endDate">
+    </div>
+
+    <div class="actions">
+        <button class="book-btn" onclick="bookNow()">Book</button>
+         <a href="main page.html"><button class="wa-btn">MAIN</button></a>
+    </div>
+
+</div>
+</body>
+<script>
+  
+
+const pricePerDay = 90;
+
+const start = document.getElementById("startDate");
+const end = document.getElementById("endDate");
+const total = document.getElementById("total");
+
+start.onchange = updatePrice;
+end.onchange = updatePrice;
+
+function updatePrice() {
+
+    if (start.value && end.value) {
+
+        let startDate = new Date(start.value);
+        let endDate = new Date(end.value);
+
+        if (endDate > startDate) {
+
+            let days = (endDate - startDate) / (1000 * 60 * 60 * 24);
+            let finalPrice = days * pricePerDay;
+
+            total.innerHTML = "Total: $" + finalPrice;
+        }
+    }
+}
+
+function bookNow() {
+
+    let car = encodeURIComponent("nissan gtr");
+    let start = document.getElementById("startDate").value;
+    let end = document.getElementById("endDate").value;
+
+    let price = 130; 
+
+    let url = "booking.html?car=" + car 
+        + "&start=" + start 
+        
+        + "&end=" + end
+        + "&price=" + price;
+
+    window.location.href = url;
+}
+</script>

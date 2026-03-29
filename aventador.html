@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .bottom-bar {
+            position: fixed;
+            bottom: 15px;
+
+
+            width: 95%;
+            max-width: 900px;
+
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+
+            border-radius: 20px;
+            padding: 12px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        .bar-info .price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #f5c518;
+        }
+
+        .bar-info .total {
+            font-size: 13px;
+            color: #ccc;
+        }
+
+
+        .dates {
+            display: flex;
+            gap: 5px;
+        }
+
+        .dates input {
+            padding: 6px;
+            border-radius: 8px;
+            border: none;
+            font-size: 12px;
+        }
+
+
+        .actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .book-btn {
+            background: linear-gradient(135deg, #f5c518, #e0b000);
+            color: black;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .wa-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: left;
+            padding: 20px;
+            padding-top: 200px;
+            font-size: 1.5em;
+        }
+
+        main {
+            background-color: white;
+
+        }
+
+        #white {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+
+        }
+
+        #white img {
+            width: 500px;
+            float: left;
+        }
+
+        #white .txt {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2em;
+            color: black;
+            margin-top: 150px;
+            text-align: left;
+        }
+
+        #yellow img {
+            width: 500px;
+            float: right;
+            margin: 20px;
+        }
+
+        #yellow .txt2 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2em;
+            color: black;
+            margin-top: 150px;
+            text-align: left;
+        }
+
+        #inside {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+            margin-top: 200px;
+
+        }
+
+        #inside img {
+            width: 500px;
+            float: left;
+        }
+
+        #inside .txt {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2em;
+            color: black;
+            text-align: center;
+        }
+
+        #sound {
+            background-color: black;
+            padding: 50px;
+            margin-top: 200px;
+            display: flex;
+            color: white;
+
+        }
+
+        #sound img {
+            width: 400px;
+            float: left;
+        }
+
+        #sound section {
+            padding: 100px;
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        fieldset {
+            height: 300px;
+            width: 100%;
+            background-color: rgb(35, 33, 33);
+            margin-top: 100px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        fieldset legend {
+            font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: black;
+            font-size: 3em;
+        }
+
+        fieldset button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f5c518;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        fieldset button:hover {
+            background-color: #e0b000;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            background-color: #111;
+            color: #f5c518;
+            font-size: 18px;
+            padding: 12px;
+            border-bottom: 1px solid #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="video-container">
+
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="lambvideo.mp4" type="video/mp4">
+            </video>
+
+            <div class="content">
+                <p>Aventador</p>
+                <h1>DARE YOUR EGO</h1>
+            </div>
+
+        </div>
+
+        <img src="lambhead.png" alt="Aventador" style="width:100%; height:auto;">
+
+        <br><br><br>
+        <div id="white">
+            <img src="whitelamb.jpg" alt="">
+            <h1 class="txt" style="text-align: center; font-size: 3em;">VUE D’ENSEMBLE</h1>
+            <p class="txt">Après la Miura, l’Islero, la Countach et l’Urraco, la Lamborghini actuelle la plus
+                emblématique hérite des modèles S historiques et évolue, devenant l’Aventador S. L’exclusivité du design
+                Lamborghini et un nouveau moteur V12 de 740 CV épousent une technologie haut de gamme, la LDVA
+                (Lamborghini Dinamica Veicolo Attiva).</p>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div id="yellow">
+            <img src="yellowlamb.jpg" alt="">
+            <h1 class="txt2" style="text-align: center; font-size: 3em;">EXTÉRIEUR</h1>
+            <p class="txt2">L’Aventador S affiche l’ADN inimitable de Lamborghini tout en optimisant l’association entre
+                dynamisme, raffinement et agressivité à travers des lignes encore plus fuselées. Si, grâce au design
+                hexagonal des pots d’échappement, l’arrière se révèle aussi puissant que le moteur d’une navette
+                spatiale, l’avant présente des formes rappelant des ailerons de requin et transmettant la même sensation
+                de force et d’élégance. Chaque surface de l’Aventador S a été étudiée pour gagner en puissance et
+                améliorer ses performances. </p>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div id="inside">
+            <img src="lambinside.jpg" alt="">
+            <h1 class="txt" style="text-align: center; font-size: 3em;">HABITACLE</h1>
+            <p class="txt">L’Aventador S est une supersportive extrêmement luxueuse affichant une technologie
+                d’avant-garde. Les finitions intérieures sont réalisées avec des matériaux de très grande qualité et
+                offrent un choix de possibilités infini. L’élégance épouse une technologie de pointe, comme celle du
+                tableau de bord doté d’un écran TFT interactif à cristaux liquides, au graphisme repensé, et le système
+                d’éclairage à LED spécialement conçu.</p>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div id="sound">
+            <img src="lambengine.jpg" alt="">
+            <section style="margin-left: 20px;">
+                <h1 style="text-align: center; font-size: 3em;">Feel the engine</h1>
+                <p>Utilisez un casque ou des écouteurs pour une expérience sonore 8D.</p>
+                <audio src="lambsound.mp3" controls style="width: 100%; margin-top: 20px;"></audio>
+        </div>
+        </section>
+        </div>
+        <fieldset>
+            <legend>CARACTÉRISTIQUES TECHNIQUES</legend>
+            <a href="lambcara.html" target="_blank"><button>AFFICHER PLUS +</button></a>
+            <table>
+                <tr>
+                    <th>CYLINDRÉE</th>
+                    <td>6.498 cm³</td>
+                </tr>
+                <tr>
+                    <th>PUISSANCE MAXIMALE</th>
+                    <td>740 ch à 8.400 tr/min</td>
+                </tr>
+                <tr>
+                    <th>COUPLE MAXIMAL</th>
+                    <td>690 Nm à 5.500 tr/min</td>
+                </tr>
+                <tr>
+                    <th>VITESSE MAXIMALE</th>
+                    <td>350 km/h</td>
+                </tr>
+                <tr>
+                    <th>ACCÉLÉRATION 0-100 KM/H</th>
+                    <td>2,9 secondes</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        </section>
+
+        <div class="bottom-bar">
+
+            <div class="bar-info">
+                <div class="price">$200/day</div>
+                <div class="total" id="total">Total: $200</div>
+                <div style="font-size:12px;color:#f5c518;">
+                    ⚡ Only 1 Aventador left today
+                </div>
+            </div>
+
+            <div class="dates">
+                <input type="date" id="startDate">
+                <input type="date" id="endDate">
+            </div>
+
+            <div class="actions">
+                <button class="book-btn" onclick="bookNow()">Book</button>
+                <a href="main page.html"><button class="wa-btn">MAIN</button></a>
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+        <script>
+
+              const pricePerDay = 120;
+
+            document.getElementById("startDate").addEventListener("change", calculate);
+            document.getElementById("endDate").addEventListener("change", calculate);
+
+            function calculate() {
+                const start = new Date(document.getElementById("startDate").value);
+                const end = new Date(document.getElementById("endDate").value);
+
+                if (start && end && end > start) {
+                    const diffTime = end - start;
+                    const days = diffTime / (1000 * 60 * 60 * 24);
+
+                    const total = days * pricePerDay;
+                    document.getElementById("total").textContent = "Total: $" + total;
+                }
+            }
+
+function bookNow() {
+
+    let car = encodeURIComponent("BMW 3 Series");
+    let start = document.getElementById("startDate").value;
+    let end = document.getElementById("endDate").value;
+
+    let price = 120; 
+
+    let url = "booking.html?car=" + car 
+        + "&start=" + start 
+        + "&end=" + end
+        + "&price=" + price;
+
+    window.location.href = url;
+}         
+        </script>
+</body>

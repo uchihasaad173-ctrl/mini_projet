@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GT Configurator</title>
+
+    <style>
+        header {
+            text-align: center;
+        }
+
+        img {
+            width: 600px;
+            transition: 0.3s;
+
+        }
+
+      
+        .panel,
+        .gallery {
+            text-align: center;
+        }
+
+      
+        #carSection {
+            padding: 40px;
+            border-radius: 20px;
+            background: linear-gradient(120deg, #ff8c42, #ff5e00);
+        }
+
+        .txt {
+            max-width: 800px;
+            text-align: left;
+            margin-top: 70px;
+            color: gray;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .txt h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 0px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 150px;
+            background-color: darkslategrey;
+        }
+
+        button:hover {
+            background-color: #555;
+            color: greenyellow;
+        }
+
+        #catres {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .catre {
+            width: 300px;
+            height: 600px;
+            margin: 0 20px;
+            text-align: center;
+            border: #555 solid 1px;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .catre img {
+            width: 100%;
+            border-radius: 10px;
+
+        }
+
+        .catre h3 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .catre p {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #555;
+        }
+
+        .catre img:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 10px #555;
+        }
+
+        #last {
+            max-width: 100%;
+            margin: auto;
+            margin-top: 50px;
+            background-color: #000;
+            color: white;
+            padding: 40px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-image: url(form.jpg);
+            background-size: cover;
+            padding: 40px;
+            height: 600px;
+        }
+
+        
+
+        
+        .bottom-bar {
+            position: fixed;
+            bottom: 15px;
+         
+         
+
+            width: 95%;
+            max-width: 900px;
+
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+
+            border-radius: 20px;
+            padding: 12px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+    
+        .bar-info .price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #f5c518;
+        }
+
+        .bar-info .total {
+            font-size: 13px;
+            color: #ccc;
+        }
+
+        .dates {
+            display: flex;
+            gap: 5px;
+        }
+
+        .dates input {
+            padding: 6px;
+            border-radius: 8px;
+            border: none;
+            font-size: 12px;
+        }
+
+      
+        .actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .book-btn {
+            background: linear-gradient(135deg, #f5c518, #e0b000);
+            color: black;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .wa-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        
+        <div id="carSection">
+            <h1>GT Coupé</h1>
+            <img id="car" src="benzorange.png">
+        </div>
+
+        <div class="panel">
+        </div>
+
+    </header>
+    <div class="txt">
+        <h2>L'extérieur du Nouveau Mercedes-AMG GT Coupé.</h2>
+        <p>Développé entièrement par les équipes Mercedes-AMG, il concentre au sein d’un coupé toute la philosophie
+            Mercedes-AMG : des lignes pures et une silhouette racée, pour une expérience de conduite unique.</p>
+    </div>
+   
+    <div class="gallery">
+        <img id="ext" src="gt43.png"><br>
+
+        <button onclick="changeExt('gt43.png')">GT43</button>
+        <button onclick="changeExt('gt55-63.png')">GT55/63</button>
+        <button onclick="changeExt('chrome.png')">Chrome</button>
+        <button onclick="changeExt('carbon.png')">Carbon</button>
+    </div>
+
+    <div class="txt">
+        <h2>L'intérieur du Nouveau Mercedes-AMG GT Coupé.</h2>
+        <p>Il suffit de monter à bord du Nouveau Mercedes-AMG GT Coupé pour ressentir un plaisir de conduite typiquement
+            Mercedes-AMG. </p>
+    </div>
+
+    
+    <div class="gallery">
+        <img id="int" src="benzint1.png"><br>
+
+        <button onclick="changeInt('benzint1.png')">Black</button>
+        <button onclick="changeInt('benzint2.png')">Red</button>
+        <button onclick="changeInt('benzint3.png')">White</button>
+    </div>
+
+    <h2 style="text-align: left; font-size: 30px; margin-top: 80px;"><u>SO THRILLING. SO AMG.</u></h2>
+    <div id="catres">
+        <div class="catre">
+            <img src="benzengine.png" alt="">
+            <h3>Moteur V8 biturbo de 4,0 litres</h3>
+            <p>Le moteur V8 de 4,0 litres de Mercedes-AMG impressionne par son architecture et ses caractéristiques
+                techniques.
+                Les turbocompresseurs twin-scroll sont placés entre les culasses et trois circuits de refroidissement
+                garantissent la meilleure gestion possible de la température.</p>
+        </div>
+        <div class="catre">
+            <img src="benztransmission.png" alt="">
+            <h3>Transmission AMG SPEEDSHIFT DCT 9G</h3>
+            <p>La transmission AMG SPEEDSHIFT DCT 9G à double embrayage et 9 rapports garantit des changements de
+                vitesse rapides et précis, offrant une expérience de conduite dynamique et sportive.</p>
+        </div>
+        <div class="catre">
+            <img src="benzbrakes.png" alt="">
+            <h3>Freins AMG Performance</h3>
+            <p>Les freins AMG Performance offrent une puissance de freinage exceptionnelle, avec des disques en carbone
+                et des patins en céramique, assurant une performance optimale dans les conditions de conduite les plus
+                exigeantes.</p>
+        </div>
+    </div>
+    <div id="last">
+        <p>Mercedes-AMG GT 63 PRO 4MATIC+ Coupé.</p>
+        <h2>Une édition limitée pour un plaisir de conduite sans limite.</h2>
+        <p>Le modèle le plus expressif de la gamme Mercedes-AMG se distingue par un design racé, une aérodynamique et un
+            refroidissement optimisés, offrant des sensations de conduite uniques. Avec une puissance de 450 kW (612
+            ch), le Mercedes-AMG GT 63 PRO 4MATIC+ Coupé se présente comme un digne membre de la gamme Mercedes-AMG.
+            Pour garantir un plaisir de conduite unique, sur route ou sur circuit.</p>
+        <img src="benzavant.jpg" alt="Font">
+        <button onclick="changeInt2('benzavant.jpg')">avant</button>
+        <button onclick="changeInt2('benzarriere.jpg')">arrière</button>
+    </div>
+
+  <div class="bottom-bar">
+
+    <div class="bar-info">
+        <div class="price">$90/day</div>
+        <div class="total" id="total">Total: $90</div>
+        <div style="font-size:12px;color:#00aaff;">
+            ⚡ Only 2 BMW Series 3 left today
+        </div>
+    </div>
+
+    <div class="dates">
+        <input type="date" id="startDate">
+        <input type="date" id="endDate">
+    </div>
+
+    <div class="actions">
+        <button class="book-btn" onclick="bookNow()">Book</button>
+        <a href="main page.html"><button class="wa-btn">MAIN</button></a>
+    </div>
+
+</div>
+    <script>
+        function changeExt(img) {
+            document.getElementById("ext").src = img;
+        }
+
+        function changeInt(img) {
+            document.getElementById("int").src = img;
+        }
+
+        function changeInt2(img) {
+            document.querySelector("#last img").src = img;
+        }
+
+
+
+        const pricePerDay = 200;
+
+        const start = document.getElementById("startDate");
+        const end = document.getElementById("endDate");
+        const total = document.getElementById("total");
+
+        
+        start.onchange = updatePrice;
+        end.onchange = updatePrice;
+
+        function updatePrice() {
+
+            if (start.value && end.value){
+
+                let startDate = new Date(start.value);
+                let endDate = new Date(end.value);
+
+                if (endDate > startDate) {
+
+                    let days = (endDate - startDate) / (1000 * 60 * 60 * 24);
+                    let finalPrice = days * pricePerDay;
+
+                    total.innerHTML = "Total: $" + finalPrice;
+                }
+            }
+        }
+
+function bookNow() {
+
+    let car = encodeURIComponent("benz gt coupe");
+    let start = document.getElementById("startDate").value;
+    let end = document.getElementById("endDate").value;
+
+    let price = 90; 
+
+    let url = "booking.html?car=" + car 
+        + "&start=" + start 
+        + "&end=" + end
+        + "&price=" + price;
+
+    window.location.href = url;
+}
+
+    </script>
+
+</body>
+
+</html>

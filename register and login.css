@@ -1,0 +1,151 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; 
+}
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url('https://wallpaperbat.com/img/134707-black-car-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+    animation: magic-trick 20s infinite alternate linear;
+}
+@keyframes magic-trick {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(255,255,255,0.2); 
+    animation: fade-in 1s ease-out;
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-form h2, .login-form p {
+    color: white;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 5px;
+}
+
+.login-form p {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    color: #ccc;
+    pointer-events: none;
+    transition: 0.3s;
+}
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -20px;
+    left: 0;
+    color: #e74c3c; 
+    font-size: 0.8rem;
+}
+.input-group input:focus {
+    border-color: #e74c3c;
+}
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+.login-btn a{
+    text-decoration: none;
+    color: white;
+}
+.login-btn:visited a{
+    text-decoration: none;
+    color: white;
+}
+.login-btn:hover {
+    background-color: #c0392b;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.7);
+}
+.footer-links {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.footer-links a {
+    color: #e74c3c;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
