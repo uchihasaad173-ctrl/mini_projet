@@ -1,45 +1,52 @@
 
 
-const pricePerDay = 90;
-
-const start = document.getElementById("startDate");
-const end = document.getElementById("endDate");
-const total = document.getElementById("total");
-
-
-start.onchange = updatePrice;
-end.onchange = updatePrice;
-
 function updatePrice() {
+      dateError.style.display = "none";
+      start.classList.remove("error-input");
+      end.classList.remove("error-input");
 
-    if (start.value && end.value) {
+      if (start.value && end.value) {
 
         let startDate = new Date(start.value);
         let endDate = new Date(end.value);
 
         if (endDate > startDate) {
 
-            let days = (endDate - startDate) / (1000 * 60 * 60 * 24);
-            let finalPrice = days * pricePerDay;
+          let days = (endDate - startDate) / (1000 * 60 * 60 * 24);
+          let finalPrice = days * pricePerDay;
 
-            total.innerHTML = "Total: $" + finalPrice;
+          total.innerHTML = "Total: $" + finalPrice;
+        } else if (endDate < startDate) {
+          dateError.style.display = "block";
+          start.classList.add("error-input");
+          end.classList.add("error-input");
+          total.innerHTML = "Total: $90";
         }
+      }
     }
-}
 
+    function bookNow() {
+      if (start.value && end.value) {
+        let startDate = new Date(start.value);
+        let endDate = new Date(end.value);
 
-function bookNow() {
+        if (endDate <= startDate) {
+          dateError.style.display = "block";
+          start.classList.add("error-input");
+          end.classList.add("error-input");
+          return;
+        }
+      }
 
-    let car = encodeURIComponent("BMW 3 Series");
-    let start = document.getElementById("startDate").value;
-    let end = document.getElementById("endDate").value;
-
-    let price = 100; // price per day OR total (your choice)
-
-    let url = "booking.html?car=" + car 
-        + "&start=" + start 
-        + "&end=" + end
+      let car ="supra";
+      let startVal = document.getElementById("startDate").value;
+      let endVal = document.getElementById("endDate").value;
+      
+      let price = 90; 
+      let url = "booking.html?car=" + car
+        + "&start=" + startVal
+        + "&end=" + endVal
         + "&price=" + price;
 
-    window.location.href = url;
-}
+      window.location.href = url;
+    }
